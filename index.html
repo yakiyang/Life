@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-tw">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>life</title>
+    <!-- ========== css ================-->
+    <link rel="stylesheet" href="reveal.css">
+    <link rel="stylesheet" href="white.css" id="theme">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="c3.css" type="text/css">
+
+    <!-- ================= js =================-->
+    <script src="d3.v3.min.js" charset="utf-8"></script>
+    <script src="c3.min.js" charset="utf-8"></script>
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="zenburn.css">
+    
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- page 0-->
+            <section data-background="img/first.jpg"></section>
+
+            <!-- page 0_1-->
+            <section data-background="img/angle.gif" data-autoslide="10500"></section>
+
+            <!-- page 1-->
+            <section data-background="img/birth.jpg" data-transition="fade-in slide-out">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">出生人數性別概況</h6>
+                <div id="chart1">
+                    <script>
+                        var chart1 = c3.generate({
+                            bindto:'#chart1',
+                            data: {
+			                    x: '年份',
+			                    url: 'data/台灣出生人數.csv',
+          	                    labels: false,
+			                    type: 'bar'
+                            },
+                            subchart: {
+                                show: true
+                            },
+		                    legend: {
+                            position: 'right'
+		                    },
+		                    axis: {
+		                        x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 1000
+                            }
+	                    });
+
+                    </script>
+                </div>
+            </section>
+
+            <!-- page 2-->
+            <section data-background="img/school.jpg">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">台灣男性教育程度</h6>
+                <div id="chart2">
+                    <script>
+                        var chart2 = c3.generate({
+                            bindto:'#chart2',
+                            data: {
+			                    x: '年份',
+			                    url: 'data/台灣男性教育程度.csv',
+          	                    labels: false,
+			                    type: 'spline'
+                            },
+		                    legend: {
+                            position: 'right'
+    	                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 960
+                            }
+
+	                    });
+                    </script>
+                </div>
+            </section>
+
+            <section data-background="img/school2.jpg">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">台灣女性教育程度</h6>
+                <div id="chart2_1">
+                    <script>
+                        var chart2_1 = c3.generate({
+                            bindto:'#chart2_1',
+                            data: {
+			                    x: '年份',
+			                    url: 'data/台灣女性教育程度.csv',
+          	                    labels: false,
+			                    type: 'spline'
+                            },
+		                    legend: {
+                            position: 'right'
+    	                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 960
+                            }
+
+	                    });
+                    </script>
+                </div>
+            </section>
+
+            <!-- page 3-->
+            <section data-background="img/nojob.jpg">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">台灣男性各年齡失業率</h6>
+                <div id="chart3">
+                    <script>
+                        var chart3 = c3.generate({
+                            bindto: '#chart3',
+                            data: {
+			                    x: '年份',
+			                    url: 'data/台灣男性各年齡失業率.csv',
+          	                    labels: false,
+          	                    type: 'spline'
+                            },
+		                    legend: {
+                                position: 'spline'
+		                    },
+		                    legend: {
+		                        position: 'right'
+		                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 1000
+		                    },
+		                    zoom: {
+                                enabled: true
+		                    }
+
+	                    });
+
+                    </script>
+                </div>
+            </section>
+
+            <!-- page 3_1-->
+            <section data-background="img/nojob2.jpg">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">台灣女性各年齡失業率</h6>
+                <div id="chart3_1">
+                    <script>
+                        var chart3_1 = c3.generate({
+                            bindto: '#chart3_1',
+                            data: {
+                                x: '年份',
+                                url: 'data/台灣女性各年齡失業率.csv',
+          	                    labels: false,
+			                    type: 'spline'
+                            },
+		                    legend: {
+                            position: 'right'
+    	                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 960
+		                    },
+		                    zoom: {
+		                        enabled: true
+		                    }
+
+	                    });
+                    </script>
+                </div>
+            </section>
+
+            <!-- page 3_2-->
+            <section data-background="img/myWorld.gif" data-autoslide="10000">
+
+            </section>
+
+            <!-- page 4-->
+            <section data-background="img/marage.jpg" data-transition="fade-in slide-out">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">台灣各年齡總結婚人數</h6>
+                <div id="chart4">
+                    <script>
+                        var chart4 = c3.generate({
+                            bindto: '#chart4',
+                            data: {
+			                    x: '年份',
+			                    url: 'data/台灣各年齡總結婚人數.csv',
+          	                    labels: false,
+			                    type: 'spline'
+                            },
+		                    legend: {
+                            position: 'right'
+    	                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 960
+                            }
+
+	                    });
+                    </script>
+                </div>
+            </section>
+            
+            <!-- page 4_1-->
+            <section data-background="img/divorce.jpg">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">男性離婚率各年齡所佔比例</h6>
+                <div id="chart4_1">
+                    <script>
+                        var chart4_1 = c3.generate({
+                            bindto: '#chart4_1',
+                            data: {
+			                    x: '年',
+			                    url: 'data/離婚率_男.csv',
+          	                    labels: false,
+			                    type: 'pie'
+                            },
+		                    legend: {
+                            position: 'right'
+    	                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 960
+                            }
+
+	                    });
+                    </script>
+                </div>
+            </section>
+
+            <!-- page 4_2-->
+            <section data-background="img/divorce.jpg">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">女性離婚率各年齡所佔比例</h6>
+                <div id="chart4_2">
+                    <script>
+                        var chart4_2 = c3.generate({
+                            bindto: '#chart4_2',
+                            data: {
+			                    x: '年',
+			                    url: 'data/離婚率_女.csv',
+          	                    labels: false,
+			                    type: 'pie'
+                            },
+		                    legend: {
+                            position: 'right'
+    	                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 960
+                            }
+
+	                    });
+                    </script>
+                </div>
+            </section>
+
+            <!-- page 4_3-->
+            <section data-background="img/enough.gif" data-autoslide="2000"></section>
+
+            
+            <!-- page 5-->
+            <section data-background="img/people.png">
+                <p><br /><br /><br /><br /><br /></p>
+                <div id="chart5">
+                    <h5 style="color:black;font-size:50px;font-weight:bold;"><a href="map/main.html" target="_blank">population</a></h5>
+                    <h5 style="color:black;font-size:50px;font-weight:bold;"><a href="map/main.html" target="_blank">map</a></h5>
+
+                </div>
+            </section>
+
+
+            <!-- page 6-->
+            <section data-background="img/death.jpg">
+                <h6 style="color:white;font-size:50px;font-weight:bold;">台灣各年齡死亡人數</h6>
+                <div id="chart6">
+                    <script>
+                        var chart6 = c3.generate({
+                            bindto: '#chart6',
+                            data: {
+			                    x: '年份',
+          	                    url: 'data/台灣各年齡死亡人數.csv',
+          	                    labels: false,
+			                    type: 'spline'
+                            },
+		                    legend: {
+                            position: 'right'
+    	                    },
+		                    axis: {
+                              x: {
+                                type: 'category'
+                              }
+                            },
+		                    size: {
+                                height: 500,
+			                    width: 960
+		                    },
+		                    subchart: {
+		                        show: true
+		                    }
+
+	                    });
+                    </script>
+                </div>
+            </section>
+
+            <!-- page 7-->
+            <section data-background="img/end.png">
+
+            </section>
+
+        </div>
+        <!-- div slide end-->
+    </div>
+    <!-- div reveal end-->
+
+    <script src="head.min.js"></script>
+    <script src="reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            controls: true,
+            prograss: true,
+            history: true,
+            center: true,
+            transition: 'slide',
+
+            dependencies: [
+                {
+                    src: 'hightlight.js',
+                    async: true, condition: function(){
+                        return !!document.querySelector('pre code');
+                    }, callback: function () {
+                        hljs.inHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>
